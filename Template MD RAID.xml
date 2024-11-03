@@ -4,12 +4,14 @@
     <template_groups>
         <template_group>
             <name>Templates</name>
+            <uuid>7d8dc04d-4ecd-40e5-9ac0-23c465dc057e</uuid>
         </template_group>
     </template_groups>
     <templates>
         <template>
             <template>Template MD RAID</template>
             <name>Template MD RAID</name>
+            <uuid>d1410953-321c-49a6-a7d5-a720058a9c0e</uuid>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -18,12 +20,14 @@
             <discovery_rules>
                 <discovery_rule>
                     <name>MD RAID Discovery</name>
+                    <uuid>a10aa951-978a-4471-9cc3-dfd3b631c3c8</uuid>
                     <key>mdraid.discovery</key>
                     <delay>1h</delay>
                     <lifetime>7d</lifetime>
                     <item_prototypes>
                         <item_prototype>
                             <name>{#MD_DEVICE} Array device #$3</name>
+                            <uuid>51d47b9e-d420-4df0-812a-d1fea0dff452</uuid>
                             <key>mdraid[{#MD_DEVICE},d,0]</key>
                             <delay>600</delay>
                             <history>1d</history>
@@ -38,6 +42,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} Array device #$3</name>
+                            <uuid>4d8890f0-09fb-4294-bb1b-53616d27f1e5</uuid>
                             <key>mdraid[{#MD_DEVICE},d,1]</key>
                             <delay>600</delay>
                             <history>1d</history>
@@ -52,6 +57,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} Number of Failed Devices</name>
+                            <uuid>7cf0ac52-96bc-49f5-99ba-93c8128b8306</uuid>
                             <key>mdraid[{#MD_DEVICE},e,&quot;Failed Devices&quot;]</key>
                             <delay>300</delay>
                             <history>1d</history>
@@ -66,6 +72,7 @@
                                 <trigger_prototype>
                                     <expression>last(/Template MD RAID/mdraid[{#MD_DEVICE},e,&quot;Failed Devices&quot;])&gt;0</expression>
                                     <name>{#MD_DEVICE} Number of Failed Devices</name>
+                                    <uuid>84895e17-2ed1-4b6b-8635-8c602c9f373e</uuid>
                                     <priority>AVERAGE</priority>
                                     <description>There is a failed disk for a RAID array on this host.</description>
                                 </trigger_prototype>
@@ -73,6 +80,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} Number of Devices</name>
+                            <uuid>09d2f793-bbd2-4be5-94a2-5e2b4c23e9bf</uuid>
                             <key>mdraid[{#MD_DEVICE},e,&quot;Raid Devices&quot;]</key>
                             <delay>300</delay>
                             <history>1d</history>
@@ -86,6 +94,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} RAID Level</name>
+                            <uuid>8e450344-0307-4542-8016-e414f4a9340c</uuid>
                             <key>mdraid[{#MD_DEVICE},e,&quot;Raid Level&quot;]</key>
                             <delay>600</delay>
                             <history>1d</history>
@@ -100,6 +109,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} State</name>
+                            <uuid>27a48379-f99a-4b97-bfc7-010cb6b9bc77</uuid>
                             <key>mdraid[{#MD_DEVICE},e,&quot;State&quot;]</key>
                             <delay>300</delay>
                             <history>1d</history>
@@ -115,12 +125,14 @@
                                 <trigger_prototype>
                                     <expression>find(/Template MD RAID/mdraid[{#MD_DEVICE},e,&quot;State&quot;],,&quot;regexp&quot;,&quot;(degraded|resyncing|recovering|Not Started)&quot;)=1</expression>
                                     <name>{#MD_DEVICE} RAID State</name>
+                                    <uuid>12b580c3-f766-4e8f-bffe-5ddcd00e1684</uuid>
                                     <priority>AVERAGE</priority>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} Array Size</name>
+                            <uuid>7574b59e-ea14-45f6-b586-075218898eef</uuid>
                             <key>mdraid[{#MD_DEVICE},s,&quot;Array Size&quot;]</key>
                             <delay>600</delay>
                             <history>1d</history>
@@ -143,6 +155,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} read operation speed</name>
+                            <uuid>d46f8acf-a33a-4d31-9f46-27c08e97350f</uuid>
                             <key>vfs.dev.read[{#MD_DEVICE},operations]</key>
                             <delay>60</delay>
                             <value_type>FLOAT</value_type>
@@ -164,6 +177,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} data read speed</name>
+                            <uuid>0454b473-0e78-4985-ada5-704deaeb6997</uuid>
                             <key>vfs.dev.read[{#MD_DEVICE},sectors]</key>
                             <delay>60</delay>
                             <value_type>FLOAT</value_type>
@@ -185,6 +199,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} write operation speed</name>
+                            <uuid>88977a9c-1fe3-46d3-bcd7-3564c06296e8</uuid>
                             <key>vfs.dev.write[{#MD_DEVICE},operations]</key>
                             <delay>60</delay>
                             <value_type>FLOAT</value_type>
@@ -206,6 +221,7 @@
                         </item_prototype>
                         <item_prototype>
                             <name>{#MD_DEVICE} data write speed</name>
+                            <uuid>154fd357-4120-458f-a18d-d58c87e9d949</uuid>
                             <key>vfs.dev.write[{#MD_DEVICE},sectors]</key>
                             <delay>60</delay>
                             <value_type>FLOAT</value_type>
@@ -229,6 +245,7 @@
                     <graph_prototypes>
                         <graph_prototype>
                             <name>{#MD_DEVICE} Array IO Performance</name>
+                            <uuid>690ef72d-7113-464d-b023-a5d2b15700ee</uuid>
                             <width>400</width>
                             <ymin_type_1>FIXED</ymin_type_1>
                             <graph_items>
